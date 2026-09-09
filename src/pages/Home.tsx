@@ -4,7 +4,10 @@ import { projects } from "../data/projects";
 import FilmGrain from "../components/FilmGrain";
 
 const socialLinks = [
-  { label: "Instagram", href: "#" },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/rukkymann?stkn=dzU5eDd4dDZxcXBi@rukkymann",
+  },
   { label: "Twitter", href: "#" },
   { label: "Vimeo", href: "#" },
   { label: "LinkedIn", href: "#" },
@@ -40,7 +43,7 @@ function Hero({ introDone }: HeroProps) {
 
       <FilmGrain />
 
-      <nav className="absolute left-1/2 top-8 z-30 hidden -translate-x-1/2 sm:block">
+      <nav className="absolute left-1/2 top-8 z-30 -translate-x-1/2">
         <div className="flex items-center gap-7 rounded-full border border-paper/10 bg-reel-black/45 px-6 py-2.5 backdrop-blur-md">
           <Link
             to="/about"
@@ -118,7 +121,7 @@ function Hero({ introDone }: HeroProps) {
             </ul>
           </div>
 
-          <div>
+          <div className="hidden sm:block">
             <p className="mb-3 font-body text-xs uppercase tracking-[0.2em] text-paper-faint">
               Socials
             </p>

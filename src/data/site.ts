@@ -9,7 +9,10 @@ export const siteProfile = {
 };
 
 export const socialLinks = [
-  { label: "Instagram", href: "#" },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/rukkymann?stkn=dzU5eDd4dDZxcXBi@rukkymann",
+  },
   { label: "Twitter", href: "#" },
   { label: "Vimeo", href: "#" },
   { label: "LinkedIn", href: "#" },
