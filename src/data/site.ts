@@ -14,7 +14,7 @@ export const socialLinks = [
     href: "https://www.instagram.com/rukkymann?stkn=dzU5eDd4dDZxcXBi@rukkymann",
   },
   { label: "Twitter", href: "#" },
-  { label: "Vimeo", href: "#" },
+  { label: "YouTube", href: "#" },
   { label: "LinkedIn", href: "#" },
 ];
 
