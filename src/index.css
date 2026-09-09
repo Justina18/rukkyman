@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-reel-black text-paper font-body antialiased;
+  }
+
+  ::selection {
+    @apply bg-[#7FA06B] text-reel-black;
+  }
+
+  a {
+    @apply outline-none;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    @apply rounded-sm ring-2 ring-[#7FA06B] ring-offset-2 ring-offset-reel-black;
+  }
+}
+
+@layer utilities {
+  /* A quiet, looping film-grain texture — the one piece of ambient motion on
+     the site. Respects reduced-motion preferences. */
+  .grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/></svg>");
+    opacity: 0.06;
+    mix-blend-mode: overlay;
+    animation: grain-shift 1.4s steps(4) infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .grain::before {
+      animation: none;
+    }
+  }
+
+  .sprocket-rail {
+    background-image: radial-gradient(
+      circle,
+      theme("colors.reel.rule") 2.5px,
+      transparent 2.6px
+    );
+    background-size: 100% 42px;
+  }
+
+  .ken-burns {
+    animation: ken-burns 20s linear infinite alternate;
+    will-change: transform;
+  }
+
+  .fade-up {
+    animation: fade-up 0.8s ease-out both;
+    will-change: transform, opacity;
+  }
+
+  .fade-up-slow {
+    animation: fade-up 0.95s ease-out both;
+    will-change: transform, opacity;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ken-burns,
+    .fade-up,
+    .fade-up-slow {
+      animation: none;
+    }
+  }
+}
+
+@keyframes grain-shift {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-1%, 1%);
+  }
+  50% {
+    transform: translate(1%, -1%);
+  }
+  75% {
+    transform: translate(-1%, -1%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes ken-burns {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
