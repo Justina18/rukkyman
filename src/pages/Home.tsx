@@ -97,11 +97,7 @@ function Hero({ introDone }: HeroProps) {
         </div>
 
         <div className="flex flex-col gap-10 sm:flex-row sm:items-end sm:justify-between">
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={introDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-            transition={{ duration: 0.7, ease: "easeOut", delay: 0.22 }}
-          >
+          <div>
             <p className="mb-3 font-body text-xs uppercase tracking-[0.2em] text-paper-faint">
               Recent Work
             </p>
@@ -120,14 +116,9 @@ function Hero({ introDone }: HeroProps) {
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={introDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-            transition={{ duration: 0.7, ease: "easeOut", delay: 0.32 }}
-            className="sm:text-right"
-          >
+          <div>
             <p className="mb-3 font-body text-xs uppercase tracking-[0.2em] text-paper-faint">
               Socials
             </p>
@@ -143,7 +134,7 @@ function Hero({ introDone }: HeroProps) {
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
