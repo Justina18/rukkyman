@@ -1,12 +1,48 @@
 import FilmGrain from "../components/FilmGrain";
+import HaloReel from "../components/ui/halo-reel";
 import { FloatingNav, SiteFooter, SiteHeader } from "../components/SiteChrome";
-import { awards } from "../data/projects";
+import { awards, projects } from "../data/projects";
 import {
   aboutBio,
   creativeSkills,
   siteProfile,
   technicalSkills,
 } from "../data/site";
+
+const haloItems = [
+  {
+    src: siteProfile.portrait,
+    alt: `Portrait of ${siteProfile.name}`,
+  },
+  {
+    src: projects[0].heroImage,
+    alt: projects[0].title,
+  },
+  {
+    src: projects[2].heroImage,
+    alt: projects[2].title,
+  },
+  {
+    src: projects[3].heroImage,
+    alt: projects[3].title,
+  },
+  {
+    src: projects[4].heroImage,
+    alt: projects[4].title,
+  },
+  {
+    src: projects[5].heroImage,
+    alt: projects[5].title,
+  },
+  {
+    src: projects[6].heroImage,
+    alt: projects[6].title,
+  },
+  {
+    src: projects[7].heroImage,
+    alt: projects[7].title,
+  },
+];
 
 export default function About() {
   return (
@@ -19,21 +55,28 @@ export default function About() {
 
         <section className="mx-auto max-w-[1600px] px-6 pb-20 pt-8 sm:px-12 sm:pb-24 sm:pt-12">
           <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
-            <div className="relative aspect-[4/5] overflow-hidden border border-reel-rule bg-reel-charcoal">
-              <img
-                src={siteProfile.portrait}
-                alt={`Portrait of ${siteProfile.name}`}
-                className="h-full w-full object-cover object-top grayscale"
+            <div className="flex flex-col gap-5">
+              <HaloReel
+                items={haloItems}
+                cardWidth={130}
+                cardHeight={180}
+                minScale={0.4}
+                className="!h-[560px] overflow-hidden border border-reel-rule bg-reel-charcoal sm:!h-[640px] [&_img]:grayscale"
+                centerLabel={
+                  <div className="max-w-[10ch] text-center font-display text-4xl font-light uppercase tracking-tightest text-paper sm:text-6xl">
+                    {siteProfile.name}
+                  </div>
+                }
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-reel-black/65 via-reel-black/20 to-transparent" />
-              <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
+
+              <div className="space-y-2 px-1">
                 <p className="font-body text-xs uppercase tracking-[0.2em] text-paper-faint">
                   About
                 </p>
-                <p className="mt-2 font-display text-3xl font-light leading-tight text-paper sm:text-4xl">
+                <p className="font-display text-3xl font-light leading-tight text-paper sm:text-4xl">
                   {siteProfile.name}
                 </p>
-                <p className="mt-2 font-body text-sm text-paper-dim">
+                <p className="font-body text-sm text-paper-dim">
                   {siteProfile.title} · {siteProfile.location}
                 </p>
               </div>
