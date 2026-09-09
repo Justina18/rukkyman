@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { projects } from "../data/projects";
 import FilmGrain from "../components/FilmGrain";
@@ -9,11 +10,19 @@ const socialLinks = [
   { label: "LinkedIn", href: "#" },
 ];
 
-export default function Home() {
-  return <Hero />;
+interface HomeProps {
+  introDone: boolean;
 }
 
-function Hero() {
+export default function Home({ introDone }: HomeProps) {
+  return <Hero introDone={introDone} />;
+}
+
+interface HeroProps {
+  introDone: boolean;
+}
+
+function Hero({ introDone }: HeroProps) {
   return (
     <section className="relative min-h-screen w-full overflow-hidden">
       <div className="absolute inset-0 -z-20">
@@ -69,16 +78,30 @@ function Hero() {
           </a>
         </div>
         <div className="flex flex-1 flex-col items-center justify-center px-4 text-center">
-          <h1 className="font-display text-[13vw] font-light leading-[0.92] tracking-tightest text-paper sm:text-8xl md:text-9xl">
-           The Rukky Otebele
-          </h1>
-          <p className="mt-6 max-w-md font-body text-sm text-paper-dim sm:text-base">
+          <motion.h1
+            initial={{ opacity: 0, y: 14 }}
+            animate={introDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 14 }}
+            transition={{ duration: 0.9, ease: "easeOut" }}
+            className="font-display text-[13vw] font-light leading-[0.92] tracking-tightest text-paper sm:text-8xl md:text-9xl"
+          >
+            The Rukky Otebele
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={introDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.12 }}
+            className="mt-6 max-w-md font-body text-sm text-paper-dim sm:text-base"
+          >
             Screenwriter, Director &amp; Editor
-          </p>
+          </motion.p>
         </div>
 
         <div className="flex flex-col gap-10 sm:flex-row sm:items-end sm:justify-between">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={introDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.22 }}
+          >
             <p className="mb-3 font-body text-xs uppercase tracking-[0.2em] text-paper-faint">
               Recent Work
             </p>
@@ -97,9 +120,14 @@ function Hero() {
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
-          <div className="sm:text-right">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={introDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.32 }}
+            className="sm:text-right"
+          >
             <p className="mb-3 font-body text-xs uppercase tracking-[0.2em] text-paper-faint">
               Socials
             </p>
@@ -115,7 +143,7 @@ function Hero() {
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

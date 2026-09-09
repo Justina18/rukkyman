@@ -8,17 +8,31 @@ export default function Contact() {
       <SiteHeader />
 
       <section className="mx-auto flex min-h-[calc(100vh-88px)] max-w-[1600px] flex-col justify-center px-6 py-14 sm:px-12 sm:py-20">
-        <div className="max-w-3xl">
-          <p className="font-body text-xs uppercase tracking-[0.25em] text-paper-faint">
-            Contact
-          </p>
-          <h1 className="mt-4 font-display text-5xl font-light leading-[0.95] tracking-tightest text-paper sm:text-7xl">
-            Reach out for writing, directing, editing, or campaign work.
-          </h1>
-          <p className="mt-6 max-w-2xl font-body text-base leading-8 text-paper-dim sm:text-lg">
-            Based in {siteProfile.location}, Rukky is available for creative
-            collaborations, commission work, and project conversations.
-          </p>
+        <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+          <div className="max-w-3xl">
+            <p className="font-body text-xs uppercase tracking-[0.25em] text-paper-faint">
+              Contact
+            </p>
+            <h1 className="mt-4 font-display text-5xl font-light leading-[0.95] tracking-tightest text-paper sm:text-7xl">
+              Reach out for writing, directing, editing, or campaign work.
+            </h1>
+            <p className="mt-6 max-w-2xl font-body text-base leading-8 text-paper-dim sm:text-lg">
+              Based in {siteProfile.location}, Rukky is available for creative
+              collaborations, commission work, and project conversations.
+            </p>
+          </div>
+
+          <div className="relative overflow-hidden border border-reel-rule bg-reel-charcoal/30 shadow-2xl shadow-black/20">
+            <img
+              src="/personal-images/IMG_3308.JPG.jpeg"
+              alt={`Portrait of ${siteProfile.name}`}
+              className="h-[320px] w-full object-cover object-top grayscale sm:h-[420px] lg:h-[520px]"
+            />
+            <div
+              className="absolute inset-0 bg-gradient-to-t from-reel-black/35 via-transparent to-transparent"
+              aria-hidden="true"
+            />
+          </div>
         </div>
 
         <div className="mt-14 grid gap-10 lg:grid-cols-2 lg:gap-16">

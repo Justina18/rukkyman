@@ -1,7 +1,7 @@
 import FilmGrain from "../components/FilmGrain";
 import HaloReel from "../components/ui/halo-reel";
 import { FloatingNav, SiteFooter, SiteHeader } from "../components/SiteChrome";
-import { awards, projects } from "../data/projects";
+import { awards } from "../data/projects";
 import {
   aboutBio,
   creativeSkills,
@@ -11,36 +11,36 @@ import {
 
 const haloItems = [
   {
-    src: siteProfile.portrait,
+    src: "/personal-images/IMG_2889.JPG.jpeg",
     alt: `Portrait of ${siteProfile.name}`,
   },
   {
-    src: projects[0].heroImage,
-    alt: projects[0].title,
+    src: "/personal-images/IMG_2890.JPG.jpeg",
+    alt: `${siteProfile.name} portrait`,
   },
   {
-    src: projects[2].heroImage,
-    alt: projects[2].title,
+    src: "/personal-images/IMG_3308.JPG.jpeg",
+    alt: `${siteProfile.name} portrait`,
   },
   {
-    src: projects[3].heroImage,
-    alt: projects[3].title,
+    src: "/personal-images/IMG_2889.JPG.jpeg",
+    alt: `${siteProfile.name} portrait`,
   },
   {
-    src: projects[4].heroImage,
-    alt: projects[4].title,
+    src: "/personal-images/IMG_2890.JPG.jpeg",
+    alt: `${siteProfile.name} portrait`,
   },
   {
-    src: projects[5].heroImage,
-    alt: projects[5].title,
+    src: "/personal-images/IMG_3308.JPG.jpeg",
+    alt: `${siteProfile.name} portrait`,
   },
   {
-    src: projects[6].heroImage,
-    alt: projects[6].title,
+    src: "/personal-images/IMG_2889.JPG.jpeg",
+    alt: `${siteProfile.name} portrait`,
   },
   {
-    src: projects[7].heroImage,
-    alt: projects[7].title,
+    src: "/personal-images/IMG_2890.JPG.jpeg",
+    alt: `${siteProfile.name} portrait`,
   },
 ];
 
@@ -61,12 +61,7 @@ export default function About() {
                 cardWidth={130}
                 cardHeight={180}
                 minScale={0.4}
-                className="!h-[560px] overflow-hidden border border-reel-rule bg-reel-charcoal sm:!h-[640px] [&_img]:grayscale"
-                centerLabel={
-                  <div className="max-w-[10ch] text-center font-display text-4xl font-light uppercase tracking-tightest text-paper sm:text-6xl">
-                    {siteProfile.name}
-                  </div>
-                }
+                className="!h-[560px] overflow-hidden sm:!h-[640px] [&_img]:grayscale"
               />
 
               <div className="space-y-2 px-1">

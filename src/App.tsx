@@ -12,12 +12,13 @@ import Preloader from "./components/Preloader";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
+  const [introDone, setIntroDone] = useState(false);
 
   return (
     <>
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home introDone={introDone} />} />
         <Route path="/about" element={<About />} />
         <Route path="/work" element={<Work />} />
         <Route path="/work/:slug" element={<ProjectDetail />} />
@@ -27,7 +28,13 @@ export default function App() {
 
       <AnimatePresence>
         {loading && (
-          <Preloader key="preloader" onComplete={() => setLoading(false)} />
+          <Preloader
+            key="preloader"
+            onComplete={() => {
+              setIntroDone(true);
+              setLoading(false);
+            }}
+          />
         )}
       </AnimatePresence>
     </>

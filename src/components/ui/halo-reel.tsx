@@ -75,10 +75,6 @@ export interface HaloReelProps
   maxCards?: number;
   /** Multiplier on the drag rotation. @default 1 */
   dragSensitivity?: number;
-  /** Node parked in the middle of the ring, behind the cards. */
-  centerLabel?: React.ReactNode;
-  /** @default true */
-  showCenterLabel?: boolean;
 }
 
 const TAU = Math.PI * 2;
@@ -88,8 +84,8 @@ const clamp = (v: number, lo: number, hi: number) =>
 
 export function HaloReel({
   items,
-  cardWidth = 130,
-  cardHeight = 180,
+  cardWidth = 140,
+  cardHeight = 190,
   minScale = 0.4,
   radiusXRatio = 0.45,
   centerXRatio = 0,
@@ -102,8 +98,6 @@ export function HaloReel({
   spread = 1.2,
   maxCards = 64,
   dragSensitivity = 1,
-  centerLabel,
-  showCenterLabel = true,
   className,
   style,
   ...props
@@ -295,20 +289,6 @@ export function HaloReel({
       style={style}
       {...props}
     >
-      {showCenterLabel && centerLabel ? (
-        <div
-          className="pointer-events-none absolute inset-y-0 z-0 flex items-center justify-center px-4 text-center"
-          // Parked in whatever space the ring leaves rather than at a fixed
-          // spot, so it can never end up underneath the cards at any width.
-          style={{
-            left: size.w * centerXRatio + radiusX + cardW / 2,
-            right: 0,
-          }}
-        >
-          {centerLabel}
-        </div>
-      ) : null}
-
       {Array.from({ length: slots }, (_, i) => (
         <WheelCard
           key={i}
