@@ -54,10 +54,6 @@ export default function Work() {
                 Click into each film.
               </h2>
             </div>
-            <p className="max-w-md font-body text-sm text-paper-dim">
-              Each row carries the title, role, studio, format, and year, with a
-              hover treatment that opens the frame a little wider.
-            </p>
           </div>
 
           <div className="mt-10 space-y-4">
