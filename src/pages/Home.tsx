@@ -4,13 +4,9 @@ import { projects } from "../data/projects";
 import FilmGrain from "../components/FilmGrain";
 
 const socialLinks = [
-  {
-    label: "Instagram",
-    href: "https://www.instagram.com/rukkymann?stkn=dzU5eDd4dDZxcXBi@rukkymann",
-  },
-  { label: "Twitter", href: "#" },
-  { label: "YouTube", href: "#" },
-  { label: "LinkedIn", href: "#" },
+  { label: "X (Twitter)", href: "https://x.com/ingeniusone" },
+  { label: "Threads", href: "https://www.threads.net/@ingeniusone" },
+  { label: "TikTok", href: "https://www.tiktok.com/@ingeniusone" },
 ];
 
 interface HomeProps {
