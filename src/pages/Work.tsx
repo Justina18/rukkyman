@@ -80,17 +80,25 @@ export default function Work() {
 
                   <div className="flex items-center gap-4 sm:gap-6">
                     <div className="relative hidden h-24 w-36 overflow-hidden border border-reel-rule bg-reel-black/40 sm:block">
-                      <video
-                        className="h-full w-full object-cover grayscale transition duration-500 group-hover:scale-105 group-hover:grayscale-0"
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        preload="metadata"
-                        aria-label={`Preview clip for ${project.title}`}
-                      >
-                        <source src={project.previewVideo} type="video/webm" />
-                      </video>
+                      {project.previewVideo ? (
+                        <video
+                          className="h-full w-full object-cover grayscale transition duration-500 group-hover:scale-105 group-hover:grayscale-0"
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                          preload="metadata"
+                          aria-label={`Preview clip for ${project.title}`}
+                        >
+                          <source src={project.previewVideo} type="video/webm" />
+                        </video>
+                      ) : (
+                        <img
+                          src={project.heroImage}
+                          alt=""
+                          className="h-full w-full object-cover grayscale transition duration-500 group-hover:scale-105 group-hover:grayscale-0"
+                        />
+                      )}
                       <div className="absolute inset-0 bg-gradient-to-tr from-reel-black/35 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                     </div>
                     <span className="font-display text-2xl text-paper-dim transition-colors group-hover:text-[#7FA06B]" aria-hidden="true">

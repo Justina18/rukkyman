@@ -10,20 +10,19 @@ const still = (seed: string) =>
 
 export const projects: Project[] = [
   {
-    slug: "the-blueprint",
-    title: "The Blueprint",
+    slug: "wayside-story",
+    title: "Wayside Story",
     format: "Feature Length",
-    role: "Writer, Director & Editor",
-    studio: "Snapshots Productions",
+    role: "Director",
+    studio: "TCN Snapshots Yaba",
     year: 2026,
     logline:
-      "A riveting tale about choices, spiritual sensitivity, and the power of faith in God.",
+      "What happens when ordinary people find themselves caught in extraordinary circumstances?",
     synopsis:
-      "The Blueprint follows a life built and rebuilt by the choices we make when no one else is watching. As writer, director and editor, Rukky carried the film from page to final cut, tracing how spiritual sensitivity can quietly redraw the plans we thought were already set.",
-    heroImage: still("the-blueprint"),
-    previewVideo:
-      "/Videos/THE-BLUEPRINT-CHRISTIAN-MOVIE-THE-COVENANT-NATION-SNAPSHOTS-PROD-clip-6m55s-7m03s.webm",
-    youtubeUrl: "https://youtu.be/y5EWU0LZ84A",
+      "Wayside Story takes you on a compelling journey filled with human experiences, unexpected moments, and stories that will keep you watching until the end.",
+    heroImage: still("wayside-story"),
+    previewVideo: "",
+    youtubeUrl: "https://youtu.be/7-opYZYVxkQ?si=3Aq8S08vyKOFBdQ4",
   },
   {
     slug: "the-whistleblower",

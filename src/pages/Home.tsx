@@ -9,7 +9,14 @@ const socialLinks = [
   { label: "TikTok", href: "https://www.tiktok.com/@ingeniusone" },
 ];
 
-const videoFilters = ["Reels", "Podcasts", "Documentaries", "Weddings"];
+const videoFilters = [
+  "Reels",
+  "Podcasts",
+  "Docu-films",
+  "Weddings",
+  "Adulting Series",
+  "Abstract Content",
+];
 
 interface HomeProps {
   introDone: boolean;

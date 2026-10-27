@@ -6,7 +6,14 @@ const navItems = [
   { label: "About", to: "/about" },
 ];
 
-const videoFilters = ["Reels", "Podcasts", "Documentaries", "Weddings"];
+const videoFilters = [
+  "Reels",
+  "Podcasts",
+  "Docu-films",
+  "Weddings",
+  "Adulting Series",
+  "Abstract Content",
+];
 
 export function SiteHeader() {
   return (

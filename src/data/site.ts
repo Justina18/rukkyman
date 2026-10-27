@@ -4,7 +4,7 @@ export const siteProfile = {
   title: "Screenwriter, Director & Editor",
   location: "Lagos, Nigeria",
   email: "Rotebele@gmail.com",
-  phone: "+234 000 000 0000",
+  phone: "+2348104143061",
   portrait: "/hero-ruk.jpeg",
 };
 
