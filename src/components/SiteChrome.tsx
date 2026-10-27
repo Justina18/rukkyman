@@ -4,9 +4,9 @@ import { siteFooterNote, siteProfile, socialLinks } from "../data/site";
 
 const navItems = [
   { label: "About", to: "/about" },
-  { label: "Work", to: "/work" },
-  { label: "Contact", to: "/contact" },
 ];
+
+const videoFilters = ["Reels", "Podcasts", "Documentaries", "Weddings"];
 
 export function SiteHeader() {
   return (
@@ -35,9 +35,7 @@ export function FloatingNav() {
     <nav className="fixed left-1/2 top-5 z-40 -translate-x-1/2 px-4">
       <div className="flex items-center gap-4 rounded-full border border-paper/10 bg-reel-black/70 px-5 py-2.5 backdrop-blur-md sm:gap-7 sm:px-6">
         {navItems.map((item) => {
-          const isActive =
-            pathname === item.to ||
-            (item.to === "/work" && pathname.startsWith("/work/"));
+          const isActive = pathname === item.to;
 
           return (
             <Link
@@ -51,6 +49,42 @@ export function FloatingNav() {
             </Link>
           );
         })}
+        <Link
+          to="/work"
+          className={`font-body text-sm transition-colors ${
+            pathname.startsWith("/work")
+              ? "text-paper"
+              : "text-paper-dim hover:text-[#7FA06B]"
+          }`}
+        >
+          Filmwork
+        </Link>
+        <details className="group relative">
+          <summary className="cursor-pointer list-none font-body text-sm text-paper-dim transition-colors marker:hidden hover:text-[#7FA06B] [&::-webkit-details-marker]:hidden">
+            Videography &amp; Editing
+          </summary>
+          <div className="absolute right-0 top-full z-50 mt-3 min-w-44 border border-paper/10 bg-reel-black/95 p-2 shadow-2xl backdrop-blur-md">
+            {videoFilters.map((filter) => (
+              <Link
+                key={filter}
+                to={`/work?filter=${filter.toLowerCase()}`}
+                className="block px-3 py-2 font-body text-xs uppercase tracking-[0.16em] text-paper-dim transition-colors hover:bg-paper/5 hover:text-[#7FA06B]"
+              >
+                {filter}
+              </Link>
+            ))}
+          </div>
+        </details>
+        <Link
+          to="/contact"
+          className={`font-body text-sm transition-colors ${
+            pathname === "/contact"
+              ? "text-paper"
+              : "text-paper-dim hover:text-[#7FA06B]"
+          }`}
+        >
+          Contact
+        </Link>
       </div>
     </nav>
   );

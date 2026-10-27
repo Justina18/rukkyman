@@ -9,6 +9,8 @@ const socialLinks = [
   { label: "TikTok", href: "https://www.tiktok.com/@ingeniusone" },
 ];
 
+const videoFilters = ["Reels", "Podcasts", "Documentaries", "Weddings"];
+
 interface HomeProps {
   introDone: boolean;
 }
@@ -51,8 +53,24 @@ function Hero({ introDone }: HeroProps) {
             to="/work"
             className="font-body text-sm text-paper-dim transition-colors hover:text-[#7FA06B]"
           >
-            Work
+            Filmwork
           </Link>
+          <details className="group relative">
+            <summary className="cursor-pointer list-none font-body text-sm text-paper-dim transition-colors marker:hidden hover:text-[#7FA06B] [&::-webkit-details-marker]:hidden">
+              Videography &amp; Editing
+            </summary>
+            <div className="absolute right-0 top-full z-50 mt-3 min-w-44 border border-paper/10 bg-reel-black/95 p-2 shadow-2xl backdrop-blur-md">
+              {videoFilters.map((filter) => (
+                <Link
+                  key={filter}
+                  to={`/work?filter=${filter.toLowerCase()}`}
+                  className="block px-3 py-2 font-body text-xs uppercase tracking-[0.16em] text-paper-dim transition-colors hover:bg-paper/5 hover:text-[#7FA06B]"
+                >
+                  {filter}
+                </Link>
+              ))}
+            </div>
+          </details>
           <Link
             to="/contact"
             className="font-body text-sm text-paper-dim transition-colors hover:text-[#7FA06B]"
