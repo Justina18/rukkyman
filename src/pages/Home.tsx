@@ -14,7 +14,7 @@ const videoFilters = [
   "Podcasts",
   "Docu-films",
   "Weddings",
-  "Adulting Series",
+  "Coming-of-age Series",
   "Abstract Content",
 ];
 
